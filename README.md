@@ -1,5 +1,27 @@
 # LLM-Course-Projects
 
+## Table of Contents
+
+1. [CA1 Project Description](#ca1-project-description)
+   - [Word Embeddings and Masked Language Models (MLMs)](#word-embeddings-and-masked-language-models-mlms)
+   - [Transfer Learning with BERT](#transfer-learning-with-bert)
+
+2. [CA2 Project Description](#ca2-project-description)
+   - [GPT-2 Prompting](#gpt-2-prompting)
+   - [Soft Prompting](#soft-prompting)
+
+3. [CA3 Project Description](#ca3-project-description)
+   - [Chain-of-Thoughts](#chain-of-thoughts)
+   - [Parameter-Efficient Fine-Tuning (PEFT)](#parameter-efficient-fine-tuning-peft)
+   - [Retrieval-Augmented Generation (RAG)](#retrieval-augmented-generation-rag)
+
+4. [CA4 Project Description](#ca4-project-description)
+   - [Reinforcement Learning from Human Feedback (RLHF)](#reinforcement-learning-from-human-feedback-rlhf)
+   - [Quantization and Instruct Tuning](#quantization-and-instruct-tuning)
+   - [Evaluation](#evaluation)
+
+
+
 ## CA1 Project Description
 
 This project focuses on fine-tuning the BERT language model for various natural language processing tasks, such as text classification and question answering. The project is divided into two main parts.
@@ -47,6 +69,22 @@ In this part of the assignment, we explore Parameter-Efficient Fine-Tuning (PEFT
 In this part of the project, we focus on an application that fetches country-related information from a large language model. For this purpose, we use the `LLaMa-2-Chat-7B` model as our base. Initially, we create a simple chain that takes the name of a country as input and outputs its capital. We then enhance the chain to extract more detailed information by modifying the prompt to request data about a country's name, population, major cities, and capital in a structured `JSON` format. Next, we compare the performance of a TF-IDF Retriever and a Semantic Retriever system using the `Evaluate Retriever` function we implemented to measure the accuracy of the retrieved documents. Finally, after considering all the previous concepts and steps, we create a complete RAG chain and evaluate the results of this method in information retrieval tasks.
 
 ## CA4 Project Description
+
+This computer assignment consists of three independent projects related to large language models (LLMs). First, we explore the concept of Reinforcement Learning from Human Feedback (RLHF) in language modeling and work with the TLDR dataset for a summarization task. Next, we get familiar with Quantization and Instruct Tuning techniques, focusing on Efficient Finetuning of Quantized LLMs (QLoRA). Finally, we delve into the concept of evaluating text generation using BERTScore to compare sentence similarity.
+
+### Reinforcement Learning from Human Feedback (RLHF)
+
+In this part of the project, we implement RLHF for a summarization task using `trlX`. We begin by fine-tuning a pre-trained transformer model on our summarization dataset to create a supervised fine-tuned model (SFT). Next, we train a reward model (RM), initialized from the SFT model, which outputs a scalar value representing the reward that indicates the preferability of a summary. Finally, we use the RM to fine-tune the SFT model via Proximal Policy Optimization (PPO), aligning the SFT model with human preferences.
+
+### Quantization and Instruct Tuning
+
+Quantization is a technique used to reduce the precision of neural network weights and activations, typically from floating-point to lower-bit representations, such as 8-bit or 4-bit integers. The primary goal of quantization is to reduce the memory footprint and computational requirements of deep learning models, allowing larger models to be loaded into available memory and speeding up the inference process. In this project, we use the QLoRA method to examine the effects of quantization on speeding up inference. The notebook covers the entire process, including Hugging Face login, model loading, dataset loading, fine-tuning, and evaluating the performance of the fine-tuned model. Additionally, we explore the effects of Instruct Tuning using the `Mistral-7B-Instruct` model for interactive use cases, with simple experiments provided in the notebook.
+
+### Evaluation
+
+One method of evaluating text generation is by comparing generated text using a language model. In this part of the assignment, we use `BERTScore` to compare the similarity of sentences. We employ a more modern model, `DeBERTa`, for a simple task provided in the notebook, and evaluate its results using both the official `BERTScore` implementation and our own implementation, comparing the outcomes of both approaches.
+
+
 
 
 
